@@ -1,0 +1,452 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background: url(image.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+header{
+    backdrop-filter: blur(0.5px);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+    padding: 0.5rem;
+}
+
+.logo img{
+    height: 5rem;
+    display: inline-block;
+    margin-left: 2rem;
+}
+
+header nav{
+    margin-right: 2rem;
+    position: relative;
+    float: right;
+}
+
+header nav ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+}
+
+header nav ul li a{
+    border: 2px solid transparent;
+    border-radius: 20px;
+    padding:0.5rem;
+    font-size: 1.2rem;
+    color: #ddd;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.2s;
+}
+header nav ul li a:hover{
+    border-radius: 20px;
+    border: 2px solid #fff;
+    color: #fff;
+}
+ 
+.active{
+    border-radius: 20px;
+    border: 2px solid #fff;
+    color: #fff;    
+}
+
+header nav ul li .sign-in{
+    padding: 0.5rem;
+    color: #eee;
+    background:#ff5f02ea ;
+    border-radius: 20px;
+    border: 2px solid transparent;
+}
+
+header nav ul li .sign-in:hover{
+    background:none;
+    border:2px solid #fff;
+}
+
+section{
+    width: 100%;
+    position: relative; 
+    text-align: center;
+}
+
+.intro .container{
+    padding: 2rem;
+    width:100% ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro .container .page{
+    min-height:80vh;
+    width: 90%;
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 1);
+    border-radius: 20px;
+    backdrop-filter: blur(2px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro .container .page h2{
+    font-size: 5rem;
+}
+
+.intro .container .page #second{
+    animation: second 3s linear infinite;
+    transition-delay: 1s;
+}
+
+.intro .container .page #first{
+    animation: first 3s linear infinite;
+}
+
+@keyframes text1{
+    from{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.about{
+    padding:2rem;
+    background: #ff6a13;
+}
+
+.about h2{
+    width: 100%;
+    color: #eee;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+    font-size: 3rem;
+    margin: 3rem 0; 
+}
+
+.about .container{
+    width: 100%;
+    padding-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about .container .card-holder{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+}
+
+.about .container .card-holder .card{
+    padding: 2rem;
+    margin-top: 1rem;
+    border-radius: 20px;
+    height: 350px;
+    width: 300px;
+    background: #eee;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    transition: 0.2s ease;
+    animation: animate linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 30%;
+}
+
+.about .container .card-holder .card h4{
+    font-size: 2rem;
+    color: rgb(0, 0, 50);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.about .container .card-holder .card:hover{
+    color:#fff;
+    transform: translateY(-14px);
+    box-shadow: 14px 14px 14px rgba(0, 0, 0, 0.8);
+}
+
+.about .container .card-holder .card:hover h4{
+    color: #fff;
+}
+
+.about .container .card-holder .card::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index:-1;
+    transform: scaleY(0);
+    transition: transform 0.5s;
+    border-radius: 20px;
+    transform-origin: 0 0 ;
+    transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7);
+    background: url(img.jpg);
+    background-position: center;
+    background-repeat:no-repeat ;
+    background-size: cover;
+}
+
+.about .container .card-holder .card:hover::before{
+    transform:scaleY(1) ;
+}
+
+.about .container .card-holder .card p{
+    padding-top: 2rem;
+    line-height: 1.5;
+    font-weight: bold;
+    font-size: 1rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+@keyframes animate{
+    from{
+        opacity: 0;
+        transform: translateY(200px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.more{
+    position: relative;
+}
+
+.more h2{
+    position: absolute;
+    width: 100%;
+    color: #eee;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+    font-size: 3rem;
+    margin: 3rem 0; 
+}
+
+.more .container{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.more .container .box1{
+    width: 50%;
+    padding: 2rem;
+    padding-top: 8rem;
+    background: url(box1.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    display: grid;
+    place-items: center;
+    grid-gap: 40px;
+}
+
+.more .container .box2{
+    min-height: 680px;
+    padding: 2rem;
+    padding-top: 5rem;
+    width: 50%;
+    background: url(bg.jpg);
+    background-repeat: no-repeat;
+    background-size:cover; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    color: #eee;
+}
+
+.more .container .box1 .card{
+    height: 100px;
+    width: 90%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.582);
+    border-radius: 20px;
+    padding: 1rem;
+    text-align: center;
+    color: #fff;
+    transition: 0.2s;
+    animation: animate2 linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 20%;
+}
+
+.more .container .box1 .card p{
+    font-size: 1.5rem;
+}
+
+.more .container .box1 .card:hover {
+    scale: 1.02;
+}
+
+.more .container .box1 .card::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index:-1;
+    transform: scaleX(0);
+    transition: transform 0.4s;
+    border-radius: 20px;
+    transform-origin: 0 0 ;
+    transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7);
+    background: #ff5f02ea;
+}
+
+.more .container .box1 .card:hover::before{
+   transform:scaleX(1) ;
+}
+
+.more .container .box2 .box{
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    height: 200px;
+    padding: 1rem;
+    text-align: center;
+    width: 150px;
+    box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    transition: 0.2s;
+    animation: animate3 linear;
+    animation-timeline: view();
+    animation-range: entry 0 cover 20%;
+}
+
+.more .container .box2 .box p{
+    font-size: 1.2rem;
+    line-height: 1.2;
+}
+
+.more .container .box2 .box::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index:-1;
+    transform: scaleY(0);
+    transition: transform 0.3s;
+    border-radius: 20px;
+    transform-origin: 0 0 ;
+    transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7);
+    background: #ff5f02ea;
+}
+
+.more .container .box2 .box:hover::before{
+    transform:scaleY(1) ;
+}
+
+.more .container .box2 .box:hover {
+    scale: 1.02;
+}
+
+@keyframes animate3{
+    from{
+        opacity: 0;
+        transform: translateY(200px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes animate2{
+    from{
+        opacity: 0;
+        transform: translateX(-200px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes first {
+    from{
+        color: #eee;
+    }
+    to{
+        color: #ff6a13;
+    }
+}
+
+@keyframes second {
+    from{
+        color: #ff6a13;
+    }
+    to{
+        color: #eee;
+    }
+}
+
+footer{
+    width: 100%;
+    padding:2rem 5rem;
+    position: relative;
+    bottom:0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #333;
+    color: #eee;
+}
+
+footer h3{
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+footer .quick-links  ul{
+    font-size: 0.85rem;
+    list-style: none;
+    line-height: 2;
+    font-weight: bold;
+}
+
+footer .quick-links ul li:hover,
+footer p:hover,
+footer a:hover{
+    color:#ccc;
+    cursor: pointer;
+}
+
+footer a{
+    color: #eee;
+    text-decoration: none;
+    line-height: 2;
+}
+
+footer a i{
+    font-size: 1.5rem;
+    padding: 0.5rem;
+}
